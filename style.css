@@ -1,0 +1,72 @@
+:root {
+  --md-sys-color-primary: #22c55e;
+  --md-sys-color-on-primary: #000;
+  --md-sys-color-background: #0f0f0f;
+  --md-sys-color-surface: #181818;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background: var(--md-sys-color-background);
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: .3s ease;
+}
+
+.page.active {
+  transform: translateX(0);
+}
+
+.chat {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bubble {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--md-sys-color-surface);
+  position: relative;
+}
+
+.bubble md-icon-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.input-area {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.input-area md-outlined-text-field {
+  flex: 1;
+}
+
+.form {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

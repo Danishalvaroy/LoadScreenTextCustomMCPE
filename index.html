@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Screen Generator</title>
+
+  <!-- Import map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@material/web/": "https://esm.run/@material/web/"
+    }
+  }
+  </script>
+
+  <!-- Material 3 Components -->
+  <script type="module">
+    import '@material/web/textfield/outlined-text-field.js';
+    import '@material/web/button/filled-button.js';
+    import '@material/web/button/outlined-button.js';
+    import '@material/web/icon/icon.js';
+    import '@material/web/iconbutton/icon-button.js';
+    import '@material/web/top-app-bar/top-app-bar.js';
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PAGE: CHAT -->
+  <div class="page active" id="pageChat">
+    <md-top-app-bar>
+      <div slot="headline" id="titleChat">Loading Messages</div>
+      <md-icon-button slot="actionItems" id="openSettings">
+        <md-icon>settings</md-icon>
+      </md-icon-button>
+    </md-top-app-bar>
+
+    <div class="chat" id="chat"></div>
+
+    <div class="input-area">
+      <md-outlined-text-field
+        id="newText"
+        label="Type loading message"
+        maxlength="60">
+      </md-outlined-text-field>
+
+      <md-filled-button id="actionBtn">
+        <md-icon slot="icon" id="actionIcon">send</md-icon>
+      </md-filled-button>
+    </div>
+  </div>
+
+  <!-- PAGE: INFO -->
+  <div class="page" id="pageInfo">
+    <md-top-app-bar>
+      <md-icon-button slot="navigationIcon" id="backBtn">
+        <md-icon>arrow_back</md-icon>
+      </md-icon-button>
+      <div slot="headline" id="titleInfo">Addon Info</div>
+    </md-top-app-bar>
+
+    <div class="form">
+      <md-outlined-text-field id="addonName" label="Addon Name"></md-outlined-text-field>
+      <md-outlined-text-field id="addonDesc" label="Addon Description"></md-outlined-text-field>
+
+      <md-outlined-text-field id="engineVersion" label="Min Engine Version" value="1,16,0"></md-outlined-text-field>
+
+      <md-filled-button id="generateBtn">
+        <md-icon slot="icon">download</md-icon>
+        Generate .mcpack
+      </md-filled-button>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
